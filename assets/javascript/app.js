@@ -1,55 +1,53 @@
 
 
   var number = 60;
-
-  //  Variable that will hold our interval ID when we execute
-  //  the "run" function
+  var correct = 0;
+  var wrong = 0;
+  var numOfQuestions = 3;
+  var ansArr = ["a","b","c"]
   var intervalId;
+  var q1 = document.forms["riddle"]["q1"].value;
+  var q2 = document.forms["riddle"]["q2"].value;
+  var q3 = document.forms["riddle"]["q3"].value;
 
-  //  When the stop button gets clicked, run the stop function.
-  $("#stop").on("click", stop);
+  function decrement() {
+    number--;
+    $("#show-number").html("<h1>" + number + "</h1>");
+  }
 
-  //  When the resume button gets clicked, execute the run function.
-  $("#resume").on("click", run);
+  // function stop() {
+  //   clearInterval(intervalId);
+  // }
 
-  //  The run function sets an interval
-  //  that runs the decrement function once a second.
-  //  *****BUG FIX******** 
-  //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
-  function run() {
+
+  // if (number === 0) {
+  //   stop();
+  // }
+
+  $(".start").on("click", function() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
+  });
+
+
+
+function onSubmit(){
+  event.preventDefault();
+  
+
+  for(var i = 1; i <= numOfQuestions; i++){
+    if(q1 === ansArr[i - 1]) {
+      correct++
+      $("#correct").text("CORRECT ANSWERS: " + correct)
+      
+      console.log(correct);
+    };
   }
-
-  //  The decrement function.
-  function decrement() {
-
-    //  Decrease number by one.
-    number--;
-
-    //  Show the number in the #show-number tag.
-    $("#show-number").html("<h2>" + number + "</h2>");
+  // stop();
+}
 
 
-    //  Once number hits zero...
-    if (number === 0) {
+  
 
-      //  ...run the stop function.
-      stop();
 
-      //  Alert the user that time is up.
-      alert("Time Up!");
-    }
-  }
 
-  //  The stop function
-  function stop() {
-
-    //  Clears our intervalId
-    //  We just pass the name of the interval
-    //  to the clearInterval function.
-    clearInterval(intervalId);
-  }
-
-  //  Execute the run function.
-  run();

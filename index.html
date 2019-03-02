@@ -2,33 +2,116 @@
 
 <html lang="en-us">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  </head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 
-  <body>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    <div id="show-number">
-      <h2>1:00</h2> </div>
+<body>
 
-    <br>
 
-    <button id="stop">Stop</button>
-    <button id="resume">Resume</button>
+  <div class="container">
+    <div class="jumbotron jumbotron">
+      <div id="show-number">
+        <h1>1:00</h1>
+        
 
-    <!-- jQuery -->
-   
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-4">Trivia Game</h1>
+          <button type="button" class="start btn-outline-dark">START</button>
+        </div>
 
-    <!-- Script -->
-   
-    
+      </div>
+      <hr>
+    <form name="riddle" onsubmit="return onSubmit()">
+      
+          <div class="question">
+            <h4 class="question2"> The more there is the less you see. What could I be?</h4>
 
-   
- 
+            <div id="quest1" class="row" >
+              <div class="col-md-3">
+                <input type="radio" name=q1 value="a"><br>Darkness<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q1 value="b"><br>Lies<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q1 value="c"><br>Tall people<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q1 value="d"><br>Smoke<br>
+              </div>
+            </div>
 
-  </body>
-  <script type="text/javascript" src="assets/javascript/app.js"></script>
+          </div>
+          <br>
+
+
+
+          <div class="question">
+            <h4 class="question2"> If you break me I don't stop working. If you touch me I may be snared. If you lose me
+              nothing will matter. What am I?</h4>
+
+            <div class="row">
+              <div class="col-md-3">
+                <input type="radio" name=q2 value="a"><br>Money<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q2 value="b"><br>Your heart<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q2 value="c"><br>Trust<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q2 value="d"><br>Friendship<br>
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <div class="question">
+            <h4 class="question2"> What is it that no man wants to have but no man wants to lose?</h4>
+
+            <div class="row">
+              <div class="col-md-3">
+                <input type="radio" name=q3 value="a"><br>A bet<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q3 value="b"><br>A marriage<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q3 value="c"><br>A lawsuit<br>
+              </div>
+              <div class="col-md-3">
+                <input type="radio" name=q3 value="d"><br>A life<br>
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <button type="submit" class="submit btn-outline-dark">SUBMIT</button>
+          <br>
+          <div id="answers">
+              <h3 id="correct"></h3>
+              <h3 id="wrong"></h3>
+            </div>
+        </div>
+        
+
+      </form> 
+      
+  </div>
+
+</body>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+
 </html>
